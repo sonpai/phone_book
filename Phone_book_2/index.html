@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <nav>
+    <ul>
+      <li>
+        <img src="/images/phonebook.png" alt="phonebook" id="icon">
+      </li>
+    </ul>
+  </nav>
+  <title>Phone Book</title>
+  <link rel="stylesheet" href="styles/style.css">
+
+</head>
+
+<body>
+
+  <header>
+    <h1>PhoneBook</h1>
+
+    <div class="form-popup" id="myForm">
+
+      <label for="name"><b>Name</b></label>
+      <input type="text" placeholder="Enter Name" name="name" id="nameInput" required>
+      <button type="filter" class="btn"onclick="filterClients()">search</button>
+      <button type="reset" class="btn"onclick="resetForm()">Reset</button>
+      <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+    </form>
+  </div>
+
+  </header>
+  <main>
+
+    <div class="phonebook">
+    <ul>
+        <div class="ColumHeader">FIRST NAME</div>
+        <div class="ColumHeader">LAST NAME</div>
+        <div class="ColumHeader">EMAIL ADDRESS</div>
+        <div class="ColumHeader">HOME ADDRESS</div>
+        <div class="ColumHeader">PHONE NUMBER</div>
+        <div class="ColumHeader">EDIT</div>
+      
+      <li>
+  
+        <div class="client" id="Adiel">
+          <div class="column">Adiel</div>
+          <div class="column">Mendelson</div>
+          <div class="column">Adiel13150@gmail.com</div>
+          <div class="column">Tirat Carmel</div>
+          <div class="column">0544777627</div>
+
+          <div class="btns">
+            <button class="btn">edit</button>
+            <button class="btn">delete</button>
+          </div>
+  
+      </li>
+
+      <li>
+        <div class="client"  id="Shahaf">
+          <div class="column">Shahaf</div>
+          <div class="column">David</div>
+          <div class="column">Shahaf1265337@gmail.com</div>
+          <div class="column">Tirat Carmel</div>
+          <div class="column">0508105452</div>
+
+          <div class="btns">
+            <button class="btn">edit</button>
+            <button class="btn">delete</button>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="client" id="Tikva">
+          <div class="column">Tikva</div>
+          <div class="column">Wallela</div>
+          <div class="column">Tikva1410@gmail.com</div>
+          <div class="column">Kiryat Motzkin</div>
+          <div class="column">0542857890</div>
+
+          <div class="btns">
+            <button class="btn">edit</button>
+            <button class="btn">delete</button>      
+        </div>
+      </li>
+      <li>
+        <div class="client" id="Dalia">
+          <div class="column">Dalia</div>
+          <div class="column">Kidano</div>
+          <div class="column">Daliakidano11@gmail.com</div>
+          <div class="column">Kiryat Motzkin</div>
+          <div class="column">0532846803</div>
+
+          <div class="btns">
+            <button class="btn">edit</button>
+            <button class="btn">delete</button>      
+        </div>
+      </li>
+    </ul>
+
+  </div>
+
+    
+  </main>
+  <script src="/js/js.js"></script>
+
+ 
+</body>
+
+</html>
