@@ -54,11 +54,14 @@ function usersList(){
     }
   ];
 
+ users.sort((a, b) => a["FIRST NAME"].localeCompare(b["FIRST NAME"]));
+
 const clientList = document.getElementById('clientRows');
 
 while (clientList.childNodes.length > 1) {
   clientList.removeChild(clientList.lastChild);
 }
+
 
 
 users.forEach((user, index) => {
@@ -74,12 +77,14 @@ users.forEach((user, index) => {
     <div class="btns">
     <button class="btn" onclick="editContact(this)">Edit</button>
     <button class="btn" onclick="deleteContact(this)">Delete</button>
+            <button class="btn" onclick="showDetails(this)">Details</button>
+
     </div>
   `;
   clientList.appendChild(row);
   
   row.addEventListener('mouseover', function() {
-    this.style.backgroundColor = '#4788F5'; 
+    this.style.backgroundColor = '#7FA1C3'; 
     
   });
   row.addEventListener('mouseout', function() {
@@ -120,9 +125,36 @@ function openModal() {
   document.getElementById('myModal').style.display = 'flex';
 }
 
+function showDetails(button) {
+  const row = button.parentElement.parentElement;
+  const columns = row.querySelectorAll('.column');
+
+  document.getElementById('detailsFirstName').textContent = columns[0].textContent;
+  document.getElementById('detailsSecondName').textContent = columns[1].textContent;
+  document.getElementById('detailsPhoneNumber').textContent = columns[4].textContent;
+
+  document.getElementById('detailsEmailAddress').textContent = columns[2].textContent;
+  document.getElementById('detailsHomeAddress').textContent = columns[3].textContent;
+
+  document.getElementById('detailsModal').style.display = 'flex';
+}
+
 function closeModal(event) {
   if (event.target === document.getElementById('myModal') || event.target === document.getElementById('closeModalBtn')) {
       document.getElementById('myModal').style.display = 'none';
+  }
+}
+
+function toggleDetails() {
+  const additionalDetails = document.getElementById('additionalDetails');
+  const toggleButton = document.getElementById('toggleDetailsBtn');
+  
+  if (additionalDetails.style.display === 'none') {
+    additionalDetails.style.display = 'block';
+    toggleButton.textContent = 'Hide Details';
+  } else {
+    additionalDetails.style.display = 'none';
+    toggleButton.textContent = 'Show Details';
   }
 }
 
@@ -133,7 +165,7 @@ function addContact() {
   let homeAddress = document.getElementById('homeAddress').value.trim();
   let phoneNumber = document.getElementById('phoneNumber').value.trim();
 
-  if (!firstName || !secondName || !emailAddress || !homeAddress || !phoneNumber) {
+  if (!firstName || !secondName || !phoneNumber) {
     alert('Please fill out all fields.');
     return;
   }
@@ -159,8 +191,8 @@ function addContact() {
     <div class="column">${homeAddress}</div>
     <div class="column">${phoneNumber}</div>
     <div class="btns">
-      <button class="btn" onclick="editContact()">Edit</button>
-      <button class="btn" onclick="deleteContact()">Delete</button>
+      <button class="btn" onclick="editContact(this)">Edit</button>
+      <button class="btn" onclick="deleteContact(this)">Delete</button>
     </div>
   `;
   clientList.appendChild(row);

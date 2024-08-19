@@ -45,6 +45,7 @@
     </div>
 
 
+
   <div class="modal" id="myModal" onclick="closeModal(event)">
     <div class="modal-content">
       <button class="btn" id="closeModalBtn" onclick="closeModal(event)">X</button>
@@ -62,7 +63,22 @@
     </div>
   </div>
 
-  
+  <div class="modal" id="detailsModal" onclick="closeModal(event)">
+    <div class="modal-content">
+      <button class="btn" id="closeModalBtn" onclick="closeModal(event)">X</button>
+      <h2>Contact Details</h2>
+      <p>First Name: <span id="detailsFirstName"></span></p>
+      <p>Second Name: <span id="detailsSecondName"></span></p>
+      <p>Phone Number: <span id="detailsPhoneNumber"></span></p>
+      <div id="additionalDetails" style="display: none;">
+        <p>Email Address: <span id="detailsEmailAddress"></span></p>
+        <p>Home Address: <span id="detailsHomeAddress"></span></p>
+  </div>
+     
+      <button class="btn" onclick="toggleDetails()">Show Details</button>
+    </div>
+  </div>
+
 
   <div class="modal" id="editModal" onclick="closeEditModal(event)">
     <div class="modal-content">
