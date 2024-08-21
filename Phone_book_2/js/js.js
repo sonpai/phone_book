@@ -162,6 +162,14 @@ function toggleColor() {
   document.getElementById('nameInput').value = '';
   filterContact();
   }
+  function openForm() {
+    document.getElementById("myForm").style.display = "block";
+  }
+  
+  // Closes the search form modal
+  function closeForm() {
+    document.getElementById('myForm').style.display = 'none';
+  }
 
   // Opens the contact form modal
   function openModal() {
