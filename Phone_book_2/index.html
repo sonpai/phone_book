@@ -4,11 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <nav>  
-        <img src="/phone_book/Phone_book_2/images/phonebook.png" alt="phonebook" id="icon">
-  </nav>
+
   <title>Phone Book</title>
-  <link rel="stylesheet" href="/phone_book/Phone_book_2/styles/style.css">
+  <link rel="stylesheet" href="/Phone_book_2/styles/style.css">
 
 </head>
 <body>
@@ -18,13 +16,12 @@
 
     <div class="searchBar" id="myForm">
 
-      <label for="name"><b>Enter name: </b></label>
+      <b>Enter name: </b>
       <input type="text" placeholder="Enter Name" name="name"  id="nameInput" required>
-      <button type="filter" class="btn"onclick="filterContact()">Search</button>
-      <button type="reset" class="btn"onclick="resetForm()">Reset</button>
+      <button type="button" class="btn" onclick="filterContact()">Search</button>
+      <button type="reset" class="btn" onclick="resetForm()">Reset</button>
       <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
 
-    </form>
   </div>
 
   </header>
@@ -36,8 +33,6 @@
       <div class="table-header">
         <div class="column-header">FIRST NAME</div>
         <div class="column-header">SECOND NAME</div>
-        <div class="column-header">EMAIL ADDRESS</div>
-        <div class="column-header">HOME ADDRESS</div>
         <div class="column-header">PHONE NUMBER</div>
         <div class="column-header">OPTIONS</div>
       </div>
@@ -63,22 +58,18 @@
     </div>
   </div>
 
-  <div class="modal" id="detailsModal" onclick="closeModal(event)">
+  <div class="modal" id="detailsModal" onclick="closeDetailsModal(event)">
     <div class="modal-content">
-      <button class="btn" id="closeModalBtn" onclick="closeModal(event)">X</button>
+      <button class="btn" id="closeDetailModalBtn" onclick="closeDetailsModal(event)">X</button>
       <h2>Contact Details</h2>
       <p>First Name: <span id="detailsFirstName"></span></p>
       <p>Second Name: <span id="detailsSecondName"></span></p>
       <p>Phone Number: <span id="detailsPhoneNumber"></span></p>
-      <div id="additionalDetails" style="display: none;">
-        <p>Email Address: <span id="detailsEmailAddress"></span></p>
-        <p>Home Address: <span id="detailsHomeAddress"></span></p>
-  </div>
-     
-      <button class="btn" onclick="toggleDetails()">Show Details</button>
-    </div>
+      <p>Email Address: <span id="detailsEmailAddress"></span></p>
+      <p>Home Address: <span id="detailsHomeAddress"></span></p>
   </div>
 
+  </div>
 
   <div class="modal" id="editModal" onclick="closeEditModal(event)">
     <div class="modal-content">
@@ -97,10 +88,20 @@
     </div>
   </div>
 
+  
   </main>
-</div>
-  <script src="/phone_book/Phone_book_2/js/js.js"></script>
+
+  <script src="/Phone_book_2/js/js.js"></script>
+
+  <footer>
+
+    <p id="names"> Sofia Kononenko & Orly Wallela</p>
+    <button class="btn" id="toggleEffectBtn" onclick="toggleColor()">Toggle Color</button>
+
+  </footer>
  
 </body>
+
+
 
 </html>
